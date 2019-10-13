@@ -1,6 +1,14 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Install htop
-    apt: name=htop
+    - name: Install basic utilities
+      apt: name={{item}}
+      with_items:
+        - curl
+        - htop
+        - ffmpeg
+        - lm-sensors
+        - htop
+        - shellcheck
+        - vim
 
