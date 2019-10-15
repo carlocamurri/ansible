@@ -1,10 +1,7 @@
 - name: Install basic utilities
   block:
     - name: Curl Haskell Stack shell script
-      get_url:
-        url: https://get.haskellstack.org
-        dest: ansible_env.HOME/install_stack.sh
-        mode: '0777'
+      shell: curl -sSL https://get.haskellstack.org > ansible_env.HOME/install-stack.sh
   become: true
   become_user: carlo
 
