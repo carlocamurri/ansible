@@ -7,4 +7,5 @@
 
   tasks:
     - include: tasks/basic-utils.yml
+    - include: tasks/haskell.yml
 
