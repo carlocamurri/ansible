@@ -1,5 +1,10 @@
 - name: Install basic utilities
   block:
-    - name: Debug home directory
-      debug: var=ansible_env.HOME
+    - name: Curl Haskell Stack shell script
+      get_url:
+        url: https://get.haskellstack.org
+        dest: ansible_env.HOME/install_stack.sh
+        mode: '0777'
+  become: true
+  become_user: carlo
 
